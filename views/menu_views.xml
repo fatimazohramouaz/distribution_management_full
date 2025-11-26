@@ -1,0 +1,8 @@
+<odoo>
+  <data>
+    <menuitem id="menu_distribution_root" name="Distribution" sequence="10"/>
+    <menuitem id="menu_distribution_routes" name="Routes" parent="menu_distribution_root" sequence="6"/>
+    <menuitem id="menu_distribution_zones" name="Zones" parent="menu_distribution_routes" sequence="1" action="action_distribution_zones"/>
+    <menuitem id="menu_distribution_routes_action" name="Routes" parent="menu_distribution_routes" action="action_distribution_routes" sequence="2"/>
+  </data>
+</odoo>

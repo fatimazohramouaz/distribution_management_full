@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
+access_distribution_product,access_distribution_product,model_distribution_product,,1,1,1,1
+access_distribution_client,access_distribution_client,model_distribution_client,,1,1,1,1
+access_distribution_supplier,access_distribution_supplier,model_distribution_supplier,,1,1,1,1
+access_distribution_purchase_order,access_distribution_purchase_order,model_distribution_purchase_order,,1,1,1,1
+access_distribution_sale_order,access_distribution_sale_order,model_distribution_sale_order,,1,1,1,1
+access_distribution_sale_order_line,access_distribution_sale_order_line,model_distribution_sale_order_line,,1,1,1,1
+access_distribution_tour,access_distribution_tour,model_distribution_tour,,1,1,1,1
+access_distribution_tour_line,access_distribution_tour_line,model_distribution_tour_line,,1,1,1,1
+access_distribution_debt_payment,access_distribution_debt_payment,model_distribution_debt_payment,,1,1,1,1
+access_distribution_zone,access_distribution_zone,model_distribution_zone,,1,1,1,1
+access_distribution_route,access_distribution_route,model_distribution_route,,1,1,1,1
+access_distribution_route_line,access_distribution_route_line,model_distribution_route_line,,1,1,1,1

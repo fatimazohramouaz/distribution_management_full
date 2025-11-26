@@ -1,0 +1,8 @@
+<odoo>
+  <data noupdate="1">
+    <record id="zone_centre" model="distribution.zone">
+      <field name="name">Centre</field>
+      <field name="description">Zone centrale</field>
+    </record>
+  </data>
+</odoo>

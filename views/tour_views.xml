@@ -1,0 +1,50 @@
+<odoo>
+  <record id="view_distribution_tour_tree" model="ir.ui.view">
+    <field name="name">distribution.tour.tree</field>
+    <field name="model">distribution.tour</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="driver"/>
+        <field name="vehicle"/>
+        <field name="planned_date"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_distribution_tour_form" model="ir.ui.view">
+    <field name="name">distribution.tour.form</field>
+    <field name="model">distribution.tour</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="driver"/>
+            <field name="vehicle"/>
+            <field name="planned_date"/>
+            <field name="notes"/>
+          </group>
+          <page string="Lines">
+            <field name="tour_line_ids">
+              <tree editable="bottom">
+                <field name="client_id"/>
+                <field name="expected_qty"/>
+                <field name="delivered_qty"/>
+                <field name="status"/>
+              </tree>
+            </field>
+          </page>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_distribution_tours" model="ir.actions.act_window">
+    <field name="name">Tours</field>
+    <field name="res_model">distribution.tour</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_distribution_tours_action" name="Tours" parent="menu_distribution_tours" action="action_distribution_tours"/>
+</odoo>

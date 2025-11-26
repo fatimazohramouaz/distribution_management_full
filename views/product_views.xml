@@ -1,0 +1,42 @@
+<odoo>
+  <record id="view_distribution_product_tree" model="ir.ui.view">
+    <field name="name">distribution.product.tree</field>
+    <field name="model">distribution.product</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="default_code"/>
+        <field name="sale_price"/>
+        <field name="quantity"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_distribution_product_form" model="ir.ui.view">
+    <field name="name">distribution.product.form</field>
+    <field name="model">distribution.product</field>
+    <field name="arch" type="xml">
+      <form string="Product">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="default_code"/>
+            <field name="category"/>
+            <field name="purchase_price"/>
+            <field name="sale_price"/>
+            <field name="quantity"/>
+            <field name="uom"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_distribution_products" model="ir.actions.act_window">
+    <field name="name">Products</field>
+    <field name="res_model">distribution.product</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_distribution_products_action" name="Products" parent="menu_distribution_products" action="action_distribution_products"/>
+</odoo>

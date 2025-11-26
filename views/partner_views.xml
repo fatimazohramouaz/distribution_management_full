@@ -1,0 +1,60 @@
+<odoo>
+  <record id="view_distribution_client_tree" model="ir.ui.view">
+    <field name="name">distribution.client.tree</field>
+    <field name="model">distribution.client</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="customer_type"/>
+        <field name="current_debt"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_distribution_client_form" model="ir.ui.view">
+    <field name="name">distribution.client.form</field>
+    <field name="model">distribution.client</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="partner_id"/>
+            <field name="customer_type"/>
+            <field name="currency_id"/>
+            <field name="current_debt"/>
+          </group>
+          <notebook>
+            <page string="Payments">
+              <field name="debt_payment_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="payment_date"/>
+                  <field name="amount"/>
+                </tree>
+              </field>
+            </page>
+            <page string="Sale Orders">
+              <field name="sale_order_ids" context="{'search_default_order':1}">
+                <tree>
+                  <field name="name"/>
+                  <field name="order_date"/>
+                  <field name="total_amount"/>
+                  <field name="remaining_debt"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_distribution_clients" model="ir.actions.act_window">
+    <field name="name">Clients</field>
+    <field name="res_model">distribution.client</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_distribution_clients_action" name="Clients" parent="menu_distribution_partners" action="action_distribution_clients"/>
+</odoo>

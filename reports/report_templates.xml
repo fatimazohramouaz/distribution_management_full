@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+    <!-- Simple placeholder QWeb template for invoice (to be customized) -->
+    <template id="report_invoice_distribution">
+      <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+          <h2>Invoice / Sale Order: <t t-esc="o.name"/></h2>
+          <p>Customer: <t t-esc="o.customer_id and o.customer_id.name or ''"/></p>
+          <table class="table table-condensed">
+            <thead>
+              <tr><th>Product</th><th>Qty</th><th>Unit Price</th><th>Subtotal</th></tr>
+            </thead>
+            <tbody>
+              <t t-foreach="o.order_line_ids" t-as="l">
+                <tr>
+                  <td><t t-esc="l.product_id and l.product_id.name or ''"/></td>
+                  <td><t t-esc="l.quantity"/></td>
+                  <td><t t-esc="l.unit_price"/></td>
+                  <td><t t-esc="l.subtotal"/></td>
+                </tr>
+              </t>
+            </tbody>
+          </table>
+          <p>Total: <t t-esc="o.total_amount"/></p>
+        </t>
+      </t>
+    </template>
+  </data>
+</odoo>

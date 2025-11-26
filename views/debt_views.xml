@@ -1,0 +1,43 @@
+<odoo>
+  <record id="view_distribution_payment_tree" model="ir.ui.view">
+    <field name="name">distribution.debt.payment.tree</field>
+    <field name="model">distribution.debt.payment</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="client_id"/>
+        <field name="payment_date"/>
+        <field name="amount"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_distribution_payment_form" model="ir.ui.view">
+    <field name="name">distribution.debt.payment.form</field>
+    <field name="model">distribution.debt.payment</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="client_id"/>
+            <field name="payment_date"/>
+            <field name="amount"/>
+            <field name="note"/>
+          </group>
+        </sheet>
+        <footer>
+          <button name="post_payment" type="object" string="Post Payment" class="btn-primary"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_distribution_payments" model="ir.actions.act_window">
+    <field name="name">Payments</field>
+    <field name="res_model">distribution.debt.payment</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_distribution_payments_action" name="Payments" parent="menu_distribution_reports" action="action_distribution_payments"/>
+</odoo>
